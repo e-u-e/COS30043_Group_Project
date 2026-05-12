@@ -3,9 +3,9 @@
 ## Team Information:
 **Group:** 
 - Eddie Zheng (104454546)
-- Sowatanak Som ()
+- Sowatanak Som (104672571)
 - John Javapro ()
--
+- 
 
 ## Setup Information:
 **Initial Project Setup**
