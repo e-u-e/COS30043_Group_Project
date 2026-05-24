@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h1>Our Store</h1>
-  </div>
+  <Navbar />
+  <router-view />
+  <Footer/>  
 </template>
 
 <script setup>
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 </script>
