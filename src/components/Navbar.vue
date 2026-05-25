@@ -65,23 +65,25 @@
             </router-link>
           </li>
 
-          <li class="nav-item">
-            <router-link
-              class="nav-link"
-              to="/login"
-            >
-              Login
-            </router-link>
-          </li>
+          <!-- show login and register if not logged in -->
+          <template v-if="!$store.state.user">
+            <li class="nav-item">
+              <router-link class="nav-link" to="/login">Login</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/register">Register</router-link>
+            </li>
+          </template>
 
-          <li class="nav-item">
-            <router-link
-              class="nav-link"
-              to="/register"
-            >
-              Register
-            </router-link>
-          </li>
+          <!-- show username and logout if logged in -->
+          <template v-else>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/profile">{{ $store.state.user.username }}</router-link>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" @click="logout">Logout</a>
+            </li>
+          </template>
 
         </ul>
 
@@ -91,3 +93,15 @@
 
   </nav>
 </template>
+
+<script>
+export default {
+  name: 'NavbarComponent',
+  methods: {
+    logout() {
+      this.$store.commit('clearUser')
+      this.$router.push('/')
+    }
+  }
+}
+</script>
