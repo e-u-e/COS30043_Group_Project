@@ -51,7 +51,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'onlinestore');
 Self Assign here please
 
 ### Member 1 - Core Layout and Routing
-**Assigned to:**
+**Assigned to:** John Javapro
 
 - App shell (App.vue, main.js)
 - Navbar and Footer components
@@ -63,7 +63,7 @@ Self Assign here please
 ---
 
 ### Member 2 - Products and Search
-**Assigned to:**
+**Assigned to:** Sowatanak Som
 
 - Product listing page with pagination (ProductListView.vue)
 - Product detail page (ProductDetailView.vue)
