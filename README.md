@@ -5,7 +5,7 @@
 - Eddie Zheng (104454546)
 - Sowatanak Som (104672571)
 - John Javapro ()
-- 
+- Ali Afzali (106092469)
 
 ## Tech Info
 - **Frontend:** 
@@ -85,7 +85,7 @@ Self Assign here please
 ---
 
 ### Member 4 - Admin and Social Features
-**Assigned to:**
+**Assigned to:** Ali Afzali
 
 - Admin dashboard for managing products (AdminView.vue)
 - Create, edit and delete product forms with validation
