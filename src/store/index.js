@@ -1,22 +1,20 @@
-import { createStore } from 'vuex'
+import { reactive } from 'vue'
 
-export const store = createStore({
-  state() {
-    return {
-      // try to load user from localStorage on startup
-      user: JSON.parse(localStorage.getItem('user')) || null
-    }
-  },
-  mutations: {
-    setUser(state, userData) {
-      state.user = userData
-      // save to localStorage so it persists on page refresh
-      localStorage.setItem('user', JSON.stringify(userData))
-    },
-    clearUser(state) {
-      state.user = null
-      // remove from localStorage on logout
-      localStorage.removeItem('user')
-    }
-  }
+const state = reactive({
+  user: JSON.parse(localStorage.getItem('user')) || null
 })
+
+export const store = {
+  state,
+  install(app) {
+    app.config.globalProperties.$store = this
+  },
+  setUser(userData) {
+    state.user = userData
+    localStorage.setItem('user', JSON.stringify(userData))
+  },
+  clearUser() {
+    state.user = null
+    localStorage.removeItem('user')
+  }
+}

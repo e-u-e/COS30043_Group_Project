@@ -1,4 +1,4 @@
-# COS30043 - Project - Online Store(???)
+# COS30043 - Project - NovaStore Electronics
 
 ## Team Information:
 **Group:** 
@@ -74,7 +74,7 @@ Self Assign here please
 ---
 
 ### Member 3 - User Authentication
-**Assigned to:**
+**Assigned to:** Eddie Zheng
 
 - Register page with form validation (RegisterView.vue)
 - Login page with form validation (LoginView.vue)

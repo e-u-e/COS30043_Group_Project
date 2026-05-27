@@ -31,4 +31,69 @@
     "image": "https://picsum.photos/300/200?4",
     "description": "Track your fitness and health."
   }
+  ,
+  {
+    "id": 5,
+    "name": "Bluetooth Speaker",
+    "price": 89,
+    "category": "Electronics",
+    "image": "https://picsum.photos/300/200?5",
+    "description": "Portable Bluetooth speaker."
+  },
+  {
+    "id": 6,
+    "name": "Leather Wallet",
+    "price": 45,
+    "category": "Accessories",
+    "image": "https://picsum.photos/300/200?6",
+    "description": "Genuine leather wallet."
+  },
+  {
+    "id": 7,
+    "name": "Sunglasses",
+    "price": 75,
+    "category": "Fashion",
+    "image": "https://picsum.photos/300/200?7",
+    "description": "Polarized sunglasses."
+  },
+  {
+    "id": 8,
+    "name": "Backpack",
+    "price": 110,
+    "category": "Fashion",
+    "image": "https://picsum.photos/300/200?8",
+    "description": "Durable travel backpack."
+  },
+  {
+    "id": 9,
+    "name": "Fitness Band",
+    "price": 60,
+    "category": "Accessories",
+    "image": "https://picsum.photos/300/200?9",
+    "description": "Track activity and sleep."
+  },
+  {
+    "id": 10,
+    "name": "Electric Kettle",
+    "price": 40,
+    "category": "Home",
+    "image": "https://picsum.photos/300/200?10",
+    "description": "Fast boiling electric kettle."
+  },
+  {
+    "id": 11,
+    "name": "Coffee Maker",
+    "price": 129,
+    "category": "Home",
+    "image": "https://picsum.photos/300/200?11",
+    "description": "Automatic drip coffee maker."
+  },
+  {
+    "id": 12,
+    "name": "Desk Lamp",
+    "price": 35,
+    "category": "Home",
+    "image": "https://picsum.photos/300/200?12",
+    "description": "LED desk lamp with dimmer."
+  }
 ]

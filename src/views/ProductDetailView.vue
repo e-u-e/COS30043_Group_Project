@@ -9,6 +9,7 @@
           <img
             :src="product.image"
             class="img-fluid"
+            :alt="product.name"
           >
         </div>
 
@@ -30,11 +31,15 @@
 
     </div>
 
+    <div v-else class="alert alert-warning">
+      Product not found.
+    </div>
+
   </div>
 </template>
 
 <script>
-import products from '../data/products.json'
+import { getProductById } from '../services/api'
 
 export default {
   data() {
@@ -43,13 +48,8 @@ export default {
     }
   },
 
-  created() {
-
-    const id = parseInt(this.$route.params.id)
-
-    this.product = products.find(
-      product => product.id === id
-    )
+  async created() {
+    this.product = await getProductById(this.$route.params.id)
   }
 }
 </script>
