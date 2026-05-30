@@ -2,28 +2,7 @@
   <div>
 
     <!-- Hero Section -->
-    <section class="bg-dark text-white text-center py-5">
-
-      <div class="container">
-
-        <h1 class="display-4 fw-bold">
-          Welcome to NovaStore
-        </h1>
-
-        <p class="lead mt-3">
-          Discover the latest electronics, fashion, and accessories
-        </p>
-
-        <router-link
-          to="/products"
-          class="btn btn-primary btn-lg mt-3"
-        >
-          Shop Now
-        </router-link>
-
-      </div>
-
-    </section>
+    <HomeBackground />
 
     <!-- Featured Products -->
     <section class="container my-5">
@@ -60,7 +39,7 @@
 
               <router-link
                 :to="`/products/${product.id}`"
-                class="btn btn-outline-primary mt-auto"
+                class="btn btn-outline-primary rounded-pill mt-auto"
               >
                 View Product
               </router-link>
@@ -121,14 +100,15 @@
 
 <script>
 import products from '../data/products.json'
+import HomeBackground from '../components/HomeBackground.vue'
 
 export default {
-
-  data() {
-    return {
-      featuredProducts: products.slice(0, 4)
-    }
+  components: { HomeBackground },
+  setup() {
+    const featuredProducts = products.slice(0, 4)
+    return { featuredProducts }
   }
-
 }
 </script>
+
+<style scoped></style>

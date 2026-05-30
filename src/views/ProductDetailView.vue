@@ -21,7 +21,7 @@
 
           <h4>${{ product.price }}</h4>
 
-          <button class="btn btn-success">
+          <button class="btn btn-success rounded-pill px-4">
             Add to Cart
           </button>
 

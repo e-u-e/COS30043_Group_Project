@@ -12,7 +12,6 @@
     Vue3
     Vite
     Bootstrap
-    vuejs-paginate-next
 - **Backend:** 
     PHP
 - **Database:**
@@ -37,14 +36,13 @@ npm run dev
 1. Start Apache and MySQL
 2. In browser, go to: `http://localhost/phpmyadmin`
 3. Create a new database called `onlinestore`
-TODO: Don't worry about step 4 yet, when we start building the backend this will be relevant
 4. Import the `.sql` file found in `resources/`
 
-TODO: Also ignore this for now, will be relevant when backend is built
 ### Backend Setup
-Open `resources/apis.php` and update credentials for your local MySQL setup:
-**By default, XAMPP will use username: root and no password, this line should work for everyone with no changes***
+Open `resources/products.php` and `resources/users.php` if you want to adjust the PHP endpoints.
+The frontend already falls back to local JSON data when the backend is unavailable.
 ```php
+// Example connection settings for a local XAMPP setup
 $conn = mysqli_connect('localhost', 'root', '', 'onlinestore');
 ```
 ## Task Distribution
@@ -56,8 +54,8 @@ Self Assign here please
 - App shell (App.vue, main.js)
 - Navbar and Footer components
 - Vue Router setup with all routes defined
-- Home page (HomeView.vue)
-- About page (AboutView.vue)
+- Home page (Home.vue)
+- About page (About.vue)
 - Responsive layout using Bootstrap across 3 device sizes
 
 ---
@@ -90,8 +88,8 @@ Self Assign here please
 - Admin dashboard for managing products (AdminView.vue)
 - Create, edit and delete product forms with validation
 - Likes or reviews feature on product pages
-- Cart or wishlist page (CartView.vue)
-- PHP API and SQL table for reviews/likes (resources/reviews.php)
+- Cart or wishlist page (Cart.vue / Favourites.vue)
+- PHP API and SQL table for reviews/likes (not yet added)
 
 ---
 
@@ -99,3 +97,5 @@ Self Assign here please
 
 Each member must independently implement one advanced Vue.js 
 feature not covered in class. Add yours here once decided:
+
+

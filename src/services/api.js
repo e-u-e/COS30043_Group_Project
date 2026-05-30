@@ -35,7 +35,7 @@ export async function getProducts(params = {}) {
 			if (Array.isArray(data)) return { items: data, total: data.length }
 		}
 	} catch (e) {
-		//fallback juse in case
+		//fallback just in case
 	}
 
 	//fallback to apply local filters

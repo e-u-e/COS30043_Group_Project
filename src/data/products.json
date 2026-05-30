@@ -61,7 +61,7 @@
     "name": "Backpack",
     "price": 110,
     "category": "Fashion",
-    "image": "https://picsum.photos/300/200?8",
+    "image": "/backpack.jpg",
     "description": "Durable travel backpack."
   },
   {
