@@ -4,7 +4,7 @@
 **Group:** 
 - Eddie Zheng (104454546)
 - Sowatanak Som (104672571)
-- John Javapro ()
+- John Javapro (101233221)
 - Ali Afzali (106092469)
 
 ## Tech Info
