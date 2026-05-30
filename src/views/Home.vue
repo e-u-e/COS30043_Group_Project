@@ -1,8 +1,7 @@
 <template>
   <div>
 
-    <!-- Hero Section -->
-    <HomeBackground />
+    <HomeBackground/>
 
     <!-- Featured Products -->
     <section class="container my-5">
@@ -66,27 +65,27 @@
         <div class="row text-center">
 
           <div class="col-6 col-md-3 mb-4">
-            <div class="card p-4 h-100">
-              <h4>Electronics</h4>
-            </div>
+            <router-link class="card category p-4 h-100 text-decoration-none" :to="{ path: '/products', query: { category: 'Electronics' } }">
+              <h4 class="mb-0">Electronics</h4>
+            </router-link>
           </div>
 
           <div class="col-6 col-md-3 mb-4">
-            <div class="card p-4 h-100">
-              <h4>Fashion</h4>
-            </div>
+            <router-link class="card category p-4 h-100 text-decoration-none" :to="{ path: '/products', query: { category: 'Fashion' } }">
+              <h4 class="mb-0">Fashion</h4>
+            </router-link>
           </div>
 
           <div class="col-6 col-md-3 mb-4">
-            <div class="card p-4 h-100">
-              <h4>Shoes</h4>
-            </div>
+            <router-link class="card category p-4 h-100 text-decoration-none" :to="{ path: '/products', query: { category: 'Shoes' } }">
+              <h4 class="mb-0">Shoes</h4>
+            </router-link>
           </div>
 
           <div class="col-6 col-md-3 mb-4">
-            <div class="card p-4 h-100">
-              <h4>Accessories</h4>
-            </div>
+            <router-link class="card category p-4 h-100 text-decoration-none" :to="{ path: '/products', query: { category: 'Accessories' } }">
+              <h4 class="mb-0">Accessories</h4>
+            </router-link>
           </div>
 
         </div>
@@ -111,4 +110,14 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.category {
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+</style>

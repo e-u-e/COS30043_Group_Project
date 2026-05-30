@@ -4,7 +4,7 @@
     "name": "Gaming Laptop",
     "price": 1499,
     "category": "Electronics",
-    "image": "https://picsum.photos/300/200?1",
+    "image": "/laptop.png",
     "description": "High performance gaming laptop."
   },
   {
@@ -12,15 +12,15 @@
     "name": "Wireless Headphones",
     "price": 199,
     "category": "Electronics",
-    "image": "https://picsum.photos/300/200?2",
+    "image": "/wireless-headphones.png",
     "description": "Noise cancelling headphones."
   },
   {
     "id": 3,
     "name": "Running Shoes",
     "price": 120,
-    "category": "Fashion",
-    "image": "https://picsum.photos/300/200?3",
+    "category": "Shoes",
+    "image": "/running-shoes.png",
     "description": "Comfortable running shoes."
   },
   {
@@ -28,16 +28,15 @@
     "name": "Smart Watch",
     "price": 350,
     "category": "Accessories",
-    "image": "https://picsum.photos/300/200?4",
+    "image": "/smart-watch.png",
     "description": "Track your fitness and health."
-  }
-  ,
+  },
   {
     "id": 5,
     "name": "Bluetooth Speaker",
     "price": 89,
     "category": "Electronics",
-    "image": "https://picsum.photos/300/200?5",
+    "image": "/wireless-speaker.png",
     "description": "Portable Bluetooth speaker."
   },
   {
@@ -45,7 +44,7 @@
     "name": "Leather Wallet",
     "price": 45,
     "category": "Accessories",
-    "image": "https://picsum.photos/300/200?6",
+    "image": "/leather-wallet.webp",
     "description": "Genuine leather wallet."
   },
   {
@@ -53,15 +52,15 @@
     "name": "Sunglasses",
     "price": 75,
     "category": "Fashion",
-    "image": "https://picsum.photos/300/200?7",
+    "image": "/sunglasses.webp",
     "description": "Polarized sunglasses."
   },
   {
     "id": 8,
     "name": "Backpack",
     "price": 110,
-    "category": "Fashion",
-    "image": "/backpack.jpg",
+    "category": "Accessories",
+    "image": "/backpack.png",
     "description": "Durable travel backpack."
   },
   {
@@ -69,7 +68,7 @@
     "name": "Fitness Band",
     "price": 60,
     "category": "Accessories",
-    "image": "https://picsum.photos/300/200?9",
+    "image": "/fitness-tracker.webp",
     "description": "Track activity and sleep."
   },
   {
@@ -77,7 +76,7 @@
     "name": "Electric Kettle",
     "price": 40,
     "category": "Home",
-    "image": "https://picsum.photos/300/200?10",
+    "image": "/kettle.png",
     "description": "Fast boiling electric kettle."
   },
   {
@@ -85,7 +84,7 @@
     "name": "Coffee Maker",
     "price": 129,
     "category": "Home",
-    "image": "https://picsum.photos/300/200?11",
+    "image": "/coffee-maker.png",
     "description": "Automatic drip coffee maker."
   },
   {
@@ -93,7 +92,7 @@
     "name": "Desk Lamp",
     "price": 35,
     "category": "Home",
-    "image": "https://picsum.photos/300/200?12",
+    "image": "/desk-lamp.webp",
     "description": "LED desk lamp with dimmer."
   }
 ]

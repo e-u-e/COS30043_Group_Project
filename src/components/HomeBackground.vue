@@ -1,10 +1,10 @@
 <template>
   <section class="hero-section position-relative d-flex align-items-center text-white text-center overflow-hidden">
     
-		<!-- Star trails background element -->
+		<!-- star trails background element -->
 		<div class="star-bg position-absolute w-100 h-100" v-parallax="{ speed: 0.2, rotate: 0.03, scale: 0.0005, scaleBase: 1.15 }"></div>
 
-		<!-- Content wrapper -->
+		<!-- main weapper for the bg -->
 		<div class="container position-relative z-1 hero-content" v-parallax="0.6">
 
 		<h1 class="display-3 fw-bold mb-3">

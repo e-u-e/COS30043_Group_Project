@@ -67,6 +67,7 @@
 
 <script>
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import Paginate from 'vuejs-paginate-next'
 import ProductCard from '../components/ProductCard.vue'
 import SearchBar from '../components/SearchBar.vue'
@@ -76,9 +77,11 @@ export default {
   components: { ProductCard, SearchBar, paginate: Paginate },
 
   setup() {
+    const route = useRoute()
     const items = ref([])
     const total = ref(0)
     const search = ref('')
+    const category = ref(route.query.category ? String(route.query.category) : '')
     const sortOrder = ref('')
     const page = ref(1)
     const pageSize = ref(8)
@@ -98,6 +101,7 @@ export default {
 
       const res = await getProducts({
         search: search.value,
+        category: category.value,
         sort: sortOrder.value,
         page: page.value,
         pageSize: pageSize.value
@@ -127,6 +131,15 @@ export default {
       page.value = pageNumber
     }
 
+    watch(
+      () => route.query.category,
+      (nextCategory) => {
+        category.value = nextCategory ? String(nextCategory) : ''
+        page.value = 1
+        load()
+      }
+    )
+
     onMounted(() => {
       document.addEventListener('click', closeSelect)
       load()
@@ -147,7 +160,7 @@ export default {
       document.removeEventListener('click', closeSelect)
     })
 
-    return {items, total, search, sortOrder, page, pageSize, pageCount, isSortOpen, selectEl, sortOptions, selectSort, selectPage}
+    return {items, total, search, category, sortOrder, page, pageSize, pageCount, isSortOpen, selectEl, sortOptions, selectSort, selectPage}
   }
 }
 </script>

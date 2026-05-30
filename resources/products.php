@@ -11,6 +11,7 @@ $data = json_decode(file_get_contents($file), true);
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : null;
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
+$category = isset($_GET['category']) ? trim($_GET['category']) : '';
 $sort = isset($_GET['sort']) ? $_GET['sort'] : '';
 $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
 $pageSize = isset($_GET['pageSize']) ? max(1, intval($_GET['pageSize'])) : 1000;
@@ -31,6 +32,14 @@ if ($search !== '') {
   $s = strtolower($search);
   $data = array_filter($data, function($p) use ($s) {
     return strpos(strtolower($p['name']), $s) !== false || strpos(strtolower($p['category']), $s) !== false;
+  });
+  $data = array_values($data);
+}
+
+if ($category !== '') {
+  $c = strtolower($category);
+  $data = array_filter($data, function($p) use ($c) {
+    return strtolower($p['category']) === $c;
   });
   $data = array_values($data);
 }

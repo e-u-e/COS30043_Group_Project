@@ -5,12 +5,17 @@ const PHP_ENDPOINT = '/resources/products.php'
 function applyLocalFilters(all, params) {
 	let list = all.slice()
 	const search = params.search ? String(params.search).toLowerCase() : ''
+	const category = params.category ? String(params.category).toLowerCase() : ''
 	const sort = params.sort || ''
 	const page = params.page ? Number(params.page) : 1
 	const pageSize = params.pageSize ? Number(params.pageSize) : 1000
 
 	if (search) {
 		list = list.filter(p => (p.name + ' ' + (p.category||'')).toLowerCase().includes(search))
+	}
+
+	if (category) {
+		list = list.filter(p => String(p.category || '').toLowerCase() === category)
 	}
 
 	if (sort === 'low') list.sort((a,b)=>a.price - b.price)

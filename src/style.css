@@ -133,8 +133,7 @@ code {
     z-index: 0;
   }
 
-  .framework,
-  .vite {
+  .framework, .vite {
     position: absolute;
   }
 

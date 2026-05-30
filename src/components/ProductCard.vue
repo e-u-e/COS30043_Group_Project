@@ -93,13 +93,21 @@ const handleFavoriteClick = () => {
 
 .card-img-wrap {
   overflow: hidden;
+  /*fixed image size to prevent overflow*/
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-image {
   display: block;
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #ffffff;
   transition: transform 0.6s ease;
 }
 
