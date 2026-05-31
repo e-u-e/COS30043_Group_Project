@@ -1,6 +1,6 @@
 import { getManagedProducts, getManagedProductById } from './productManagement'
 
-const PHP_ENDPOINT = '/resources/products.php'
+const PHP_ENDPOINT = '/cos30043/s104454546/project/resources/products.php'
 
 function applyLocalFilters(all, params) {
   let list = all.slice()

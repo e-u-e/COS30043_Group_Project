@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$file = __DIR__ . '/../src/data/products.json';
+$file = __DIR__ . '/../products.json';
 if (!file_exists($file)) {
   echo json_encode([]);
   exit;
@@ -46,9 +46,15 @@ if ($category !== '') {
 
 //sort
 if ($sort === 'low') {
-  usort($data, function($a, $b) { return $a['price'] <=> $b['price']; });
+  usort($data, function($a, $b) { 
+    if ($a['price'] == $b['price']) return 0;
+    return ($a['price'] < $b['price']) ? -1 : 1;
+  });
 } else if ($sort === 'high') {
-  usort($data, function($a, $b) { return $b['price'] <=> $a['price']; });
+  usort($data, function($a, $b) { 
+    if ($a['price'] == $b['price']) return 0;
+    return ($b['price'] < $a['price']) ? -1 : 1;
+  });
 }
 
 //paginate section

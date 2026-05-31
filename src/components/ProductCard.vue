@@ -10,7 +10,7 @@
       :aria-label="isFavorite ? 'Remove from favorites' : 'Add to favorites'"
     >
       <img 
-        :src="isFavorite || isHovered ? '/public/star-svgrepo-filled.svg' : '/public/star-svgrepo-com.svg'" 
+        :src="isFavorite || isHovered ? '/cos30043/s104454546/project/star-svgrepo-filled.svg' : '/cos30043/s104454546/project/star-svgrepo-com.svg'" 
         class="star-icon"
         :class="{ 'rotate-star': isHovered || isFavorite }"
         alt="favorite star status"

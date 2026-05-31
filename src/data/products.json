@@ -4,7 +4,7 @@
     "name": "Gaming Laptop",
     "price": 1499,
     "category": "Electronics",
-    "image": "/laptop.png",
+    "image": "/cos30043/s104454546/project/laptop.png",
     "description": "High performance gaming laptop."
   },
   {
@@ -12,7 +12,7 @@
     "name": "Wireless Headphones",
     "price": 199,
     "category": "Electronics",
-    "image": "/wireless-headphones.png",
+    "image": "/cos30043/s104454546/project/wireless-headphones.png",
     "description": "Noise cancelling headphones."
   },
   {
@@ -20,7 +20,7 @@
     "name": "Running Shoes",
     "price": 120,
     "category": "Shoes",
-    "image": "/running-shoes.png",
+    "image": "/cos30043/s104454546/project/running-shoes.png",
     "description": "Comfortable running shoes."
   },
   {
@@ -28,7 +28,7 @@
     "name": "Smart Watch",
     "price": 350,
     "category": "Accessories",
-    "image": "/smart-watch.png",
+    "image": "/cos30043/s104454546/project/smart-watch.png",
     "description": "Track your fitness and health."
   },
   {
@@ -36,7 +36,7 @@
     "name": "Bluetooth Speaker",
     "price": 89,
     "category": "Electronics",
-    "image": "/wireless-speaker.png",
+    "image": "/cos30043/s104454546/project/wireless-speaker.png",
     "description": "Portable Bluetooth speaker."
   },
   {
@@ -44,7 +44,7 @@
     "name": "Leather Wallet",
     "price": 45,
     "category": "Accessories",
-    "image": "/leather-wallet.webp",
+    "image": "/cos30043/s104454546/project/leather-wallet.webp",
     "description": "Genuine leather wallet."
   },
   {
@@ -52,7 +52,7 @@
     "name": "Sunglasses",
     "price": 75,
     "category": "Fashion",
-    "image": "/sunglasses.webp",
+    "image": "/cos30043/s104454546/project/sunglasses.webp",
     "description": "Polarized sunglasses."
   },
   {
@@ -60,7 +60,7 @@
     "name": "Backpack",
     "price": 110,
     "category": "Accessories",
-    "image": "/backpack.png",
+    "image": "/cos30043/s104454546/project/backpack.png",
     "description": "Durable travel backpack."
   },
   {
@@ -68,7 +68,7 @@
     "name": "Fitness Band",
     "price": 60,
     "category": "Accessories",
-    "image": "/fitness-tracker.webp",
+    "image": "/cos30043/s104454546/project/fitness-tracker.webp",
     "description": "Track activity and sleep."
   },
   {
@@ -76,7 +76,7 @@
     "name": "Electric Kettle",
     "price": 40,
     "category": "Home",
-    "image": "/kettle.png",
+    "image": "/cos30043/s104454546/project/kettle.png",
     "description": "Fast boiling electric kettle."
   },
   {
@@ -84,7 +84,7 @@
     "name": "Coffee Maker",
     "price": 129,
     "category": "Home",
-    "image": "/coffee-maker.png",
+    "image": "/cos30043/s104454546/project/coffee-maker.png",
     "description": "Automatic drip coffee maker."
   },
   {
@@ -92,7 +92,7 @@
     "name": "Desk Lamp",
     "price": 35,
     "category": "Home",
-    "image": "/desk-lamp.webp",
+    "image": "/cos30043/s104454546/project/desk-lamp.webp",
     "description": "LED desk lamp with dimmer."
   }
 ]

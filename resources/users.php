@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 // connect to database
-$conn = mysqli_connect('localhost', 'root', '', 'onlinestore');
+$conn = mysqli_connect('feenix-mariadb.swin.edu.au', 's104454546', 'Maple123!', 's104454546_db');
 mysqli_set_charset($conn, 'utf8');
 
 $method = $_SERVER['REQUEST_METHOD'];
