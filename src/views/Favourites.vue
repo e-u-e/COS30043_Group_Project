@@ -1,11 +1,16 @@
 <!-- i worked on the favourites section as part of section 2 because you could argue that cookies and caches are saved locally,
   hence you can have a ssaved favourites list even when logged in -->
 <template>
-  <div class="container mt-5">
+  <div class="container mt-4">
     <h1 class="mb-4">Favourites</h1>
 
-    <div v-if="store.state.favorites.length === 0" class="alert alert-light text-center py-5 border">
-      <p class="text-muted mb-0">You haven't saved any items to your favorites layout yet.</p>
+    <!-- i liked the way Ali's design looked so i repeated it here too -->
+    <div v-if="store.state.favorites.length === 0" class="text-center py-5">
+      <div class="mb-3" style="font-size: 4rem;">✨</div>
+      <h4 class="text-muted mb-3">You haven't favourited any items.</h4>
+      <router-link to="/products" class="btn btn-primary rounded-pill px-5">
+        Browse Products
+      </router-link>
     </div>
 
     <div v-else class="row">
