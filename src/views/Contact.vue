@@ -1,10 +1,9 @@
 <template>
-  <div class="container py-5 mt-5">
+  <div class="container mt-4">
     <div class="row justify-content-center">
       <div class="col-12 col-lg-8">
         <div class="text-center mb-4">
-          <h2 class="mb-2">Contact Us</h2>
-          <p class="text-white-50 mb-0">Use these slots to keep all of our contact links in one place.</p>
+          <h1 class="mb-4">Contact Us</h1>
         </div>
 
         <div class="row g-3">

@@ -15,12 +15,12 @@
         <p>
           Welcome to <strong>NovaStore</strong>! We believe that staying ahead of the curve shouldn’t be complicated. 
           Whether you are upgrading your everyday tech, refreshing your wardrobe, or searching for the perfect finishing 
-          touch to your outfit, we are here to bring you the best of modern living—all in one place.
+          touch to your outfit, we are here to bring you the best of modern living.
         </p>
         <p>
           NovaStore was founded with a simple, clear mission: to create a seamless shopping experience that bridges 
           the gap between cutting-edge utility and effortless style. The word <strong>"Nova"</strong> signifies a bright 
-          new star—and that is exactly what we aim to be in your daily routine.
+          new star and that is exactly what we aim to be in your daily routine.
         </p>
       </div>
     </div>

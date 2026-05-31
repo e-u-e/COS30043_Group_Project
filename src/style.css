@@ -109,28 +109,41 @@ body {
 }
 
 .custom-navbar--home {
-  background: rgba(30, 31, 34, 0.15);
+  background: rgba(30, 31, 34, 0.15) !important;
 }
 
 .custom-navbar--page {
-  background: rgba(30, 31, 34, 0.15);
+  background: rgba(41, 90, 235, 0.15) !important;
   box-shadow: 0 18px 38px rgba(10, 12, 20, 0.18);
 }
 
-.custom-navbar--page .navbar-brand, .custom-navbar--page .nav-link, .custom-navbar--page .link-hover, .custom-navbar--page .text-white-50 {
+.custom-navbar--page .navbar-brand, .custom-navbar--page .nav-link, .custom-navbar--page .link-hover, .custom-navbar--page .text-white-50, .custom-navbar--page .theme-toggle-btn {
   color: rgba(0, 0, 0, 0.85) !important;
+}
+
+/*hook into the --pages to reflect the toggle changes when it the inverted mode*/
+[data-bs-theme="dark"] .custom-navbar--page .navbar-brand,
+[data-bs-theme="dark"] .custom-navbar--page .nav-link,
+[data-bs-theme="dark"] .custom-navbar--page .link-hover,
+[data-bs-theme="dark"] .custom-navbar--page .text-white-50,
+[data-bs-theme="dark"] .custom-navbar--page .theme-toggle-btn {
+  color: rgba(255, 255, 255, 0.95) !important;
 }
 
 .custom-navbar--page .navbar-brand {
   font-weight: 700;
 }
 
-.custom-navbar .link-hover {
-  transition: color 0.15s ease;
-}
-
 .custom-navbar .link-hover:hover, .custom-navbar .nav-link:hover {
   color: #ffffff !important;
+  transition: box-shadow 0.25s ease, transform 0.18s ease;
+  transition: color 0.15s ease;
+  transform: translateY(-7px);
+  transition: box-shadow 0.25s ease, transform 0.18s ease;
+}
+
+.custom-navbar--page .link-hover:hover, .custom-navbar--page .nav-link:hover {
+  color: #5865f2 !important;
 }
 
 /*!important overrides the bootstrap actively and updates hovered/selected text to reflect this css block*/
@@ -141,6 +154,37 @@ body {
   padding-left: 0.8rem !important;
   padding-right: 0.8rem !important;
   box-shadow: 0 6px 18px rgba(88, 101, 242, 0.18);
+}
+
+.custom-navbar .theme-toggle-btn {
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/*styling for the light/dark btn*/
+.custom-navbar .theme-toggle-btn:hover {
+  background: rgba(88, 101, 242, 0.65);
+}
+
+.custom-navbar--home .theme-toggle-btn img {
+  filter: brightness(0) invert(1);
+  opacity: 0.5;
+}
+
+.custom-navbar--page .theme-toggle-btn img {
+  filter: none;
+}
+
+[data-bs-theme="dark"] .custom-navbar--page .theme-toggle-btn img {
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.custom-navbar .theme-toggle-btn:focus-visible {
+  outline: 2px solid rgba(88, 101, 242, 0.35);
+  outline-offset: 3px;
 }
 
 .custom-navbar .nav-link:focus-visible {
@@ -230,7 +274,7 @@ body {
   width: auto;
   height: auto;
   object-fit: contain;
-  background: #ffffff;
+  background: transparent;
   transition: transform 0.6s ease;
 }
 
