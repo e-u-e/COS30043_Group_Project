@@ -89,7 +89,7 @@ $conn = mysqli_connect('localhost', 'root', '', 'onlinestore');
 - Create, edit and delete product forms with validation
 - Likes or reviews feature on product pages
 - Cart or wishlist page (Cart.vue)
-- PHP API and SQL table for reviews/likes (not yet added)
+- PHP API and SQL table for reviews/likes
 
 ---
 

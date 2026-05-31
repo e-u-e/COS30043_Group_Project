@@ -109,15 +109,15 @@ body {
 }
 
 .custom-navbar--home {
-  background: rgba(30, 31, 34, 0.15);
+  background: rgba(30, 31, 34, 0.15) !important;
 }
 
 .custom-navbar--page {
-  background: rgba(30, 31, 34, 0.15);
+  background: rgba(41, 90, 235, 0.15) !important;
   box-shadow: 0 18px 38px rgba(10, 12, 20, 0.18);
 }
 
-.custom-navbar--page .navbar-brand, .custom-navbar--page .nav-link, .custom-navbar--page .link-hover, .custom-navbar--page .text-white-50 {
+.custom-navbar--page .navbar-brand, .custom-navbar--page .nav-link, .custom-navbar--page .link-hover, .custom-navbar--page .text-white-50, .custom-navbar--page .theme-toggle-btn {
   color: rgba(0, 0, 0, 0.85) !important;
 }
 
@@ -230,7 +230,7 @@ body {
   width: auto;
   height: auto;
   object-fit: contain;
-  background: #ffffff;
+  background: transparent;
   transition: transform 0.6s ease;
 }
 
