@@ -100,7 +100,7 @@ feature not covered in class. Add yours here once decided:
 
 **Sowatanak Som: Parallaxing with Vue.js**
 
-- Created custom parallax vue directive that interacts with the scroll wheel to play animations based on anchor points.
+- Created custom parallax vue directive that interacts with the scroll wheel to play animations based on anchor points
 - It supports simple actions such as scaling, rotating, and transforming
 - Inspired by systems like GSAP and modern website schemes
 
