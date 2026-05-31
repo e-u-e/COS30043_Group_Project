@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. LIGHT MODE SETUP (Google Minimal Clean)
+   1. LIGHT MODE SETUP
    ========================================================================== */
 :root, [data-bs-theme="light"] {
   /* Your Custom Variables */
@@ -28,7 +28,7 @@
 }
 
 /* ==========================================================================
-   2. THE GOOGLE / FACEBOOK DARK MODE PALETTE
+   2.  DARK MODE PALETTE
    ========================================================================== */
 
 /* Mixin helper to apply theme values smoothly across selectors */
