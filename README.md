@@ -46,8 +46,6 @@ The frontend already falls back to local JSON data when the backend is unavailab
 $conn = mysqli_connect('localhost', 'root', '', 'onlinestore');
 ```
 ## Task Distribution
-Self Assign here please
-
 ### Member 1 - Core Layout and Routing
 **Assigned to:** John Javapro
 
@@ -68,6 +66,8 @@ Self Assign here please
 - Search and sort functionality
 - Reusable ProductCard component
 - PHP API and SQL table for products (resources/products.php)
+- Favourites page (Favourites.vue)
+- Contact (Contact.vue)
 
 ---
 
@@ -88,7 +88,7 @@ Self Assign here please
 - Admin dashboard for managing products (AdminView.vue)
 - Create, edit and delete product forms with validation
 - Likes or reviews feature on product pages
-- Cart or wishlist page (Cart.vue / Favourites.vue)
+- Cart or wishlist page (Cart.vue)
 - PHP API and SQL table for reviews/likes (not yet added)
 
 ---
@@ -98,4 +98,9 @@ Self Assign here please
 Each member must independently implement one advanced Vue.js 
 feature not covered in class. Add yours here once decided:
 
+**Sowatanak Som: Parallaxing with Vue.js**
+
+- Created custom parallax vue directive that interacts with the scroll wheel to play animations based on anchor points.
+- It supports simple actions such as scaling, rotating, and transforming
+- Inspired by systems like GSAP and modern website schemes
 

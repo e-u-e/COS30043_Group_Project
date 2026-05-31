@@ -55,6 +55,10 @@
             <router-link class="nav-link text-white-50 p-2" to="/about">About Us</router-link>
           </li>
 
+          <li class="nav-item">
+            <router-link class="nav-link text-white-50 p-2" to="/contact">Contact</router-link>
+          </li>
+
         </ul>
 
         <!-- right aligned navbar settings -->
