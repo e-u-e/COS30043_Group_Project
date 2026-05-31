@@ -1,12 +1,10 @@
 <template>
   <div class="d-flex flex-column min-vh-100">
-
-    <Navbar/>
-      <main class="flex-grow-1" :class="{ 'page-wrapper': $route.path !== '/' }">
-        <router-view />
-      </main>
-    <Footer/> 
-
+    <Navbar />
+    <main class="flex-grow-1" :class="{ 'page-wrapper': $route.path !== '/' }">
+      <router-view />
+    </main>
+    <Footer />
   </div>
 </template>
 
