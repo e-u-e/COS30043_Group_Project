@@ -29,7 +29,7 @@
         <router-link :to="`/products/${product.id}`" class="btn btn-primary rounded-pill btn-view">
           View
         </router-link>
-        <button class="btn btn-outline-secondary rounded-pill btn-add" @click="$emit('add-to-cart', product)">Add to cart</button>
+        <button class="btn btn-outline-secondary rounded-pill btn-add" @click="handleAddToCart">Add to cart</button>
       </div>
     </div>
 
@@ -52,5 +52,9 @@ const isFavorite = computed(() => {
 
 const handleFavoriteClick = () => {
   store.toggleFavorite(props.product)
+}
+
+const handleAddToCart = () => {
+  store.addToCart(props.product)
 }
 </script>
