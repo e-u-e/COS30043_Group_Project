@@ -54,7 +54,7 @@
     </section>
 
     <!-- Categories -->
-    <section class="bg-light py-5">
+    <section class="bg-body-tertiary py-5">
 
       <div class="container">
 

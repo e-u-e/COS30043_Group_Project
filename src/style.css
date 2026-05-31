@@ -1,54 +1,106 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
+/* ==========================================================================
+   1. LIGHT MODE SETUP (Google Minimal Clean)
+   ========================================================================== */
+:root, [data-bs-theme="light"] {
+  /* Your Custom Variables */
+  --bg: #ffffff;             /* Pure white canvas */
+  --code-bg: #f8f9fa;        /* Soft gray sections (Google's gray-100) */
+  --bg-card: #ffffff;        /* Cards match background */
+  --text: #4a4a4a;           /* Soft dark text */
+  --text-h: #1f1f1f;         /* Distinct header text */
+  --border: #e0e0e0;         /* Minimal lines */
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --navbar-toggle-invert: 0;
+  
+  --sans: system-ui, -apple-system, sans-serif;
   font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
+  /* Map directly to Native Bootstrap Light Variables */
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--text);
+  --bs-card-bg: var(--bg-card);
+  --bs-card-color: var(--text);
+  --bs-border-color: var(--border);
+  --bs-tertiary-bg: var(--code-bg); /* This maps automatically to Bootstrap's .bg-light */
 }
 
+/* ==========================================================================
+   2. THE GOOGLE / FACEBOOK DARK MODE PALETTE
+   ========================================================================== */
+
+/* Mixin helper to apply theme values smoothly across selectors */
+[data-bs-theme="dark"] {
+  --bg: #121212;             /* Google Dark Base Material */
+  --code-bg: #1e1e1e;        /* Facebook/Google secondary section layer */
+  --bg-card: #242424;        /* Google Card elevation level 1 */
+  --text: #c4c7c5;           /* Google text-secondary (Soft on eye sockets) */
+  --text-h: #e3e3e3;         /* Google bright text-primary headers */
+  --border: #2c2c2c;         /* Subdued edge borders */
+  --accent: #c084fc;
+  --accent-bg: rgba(192, 132, 252, 0.15);
+  --accent-border: rgba(192, 132, 252, 0.4);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --navbar-toggle-invert: 1;
+
+  /* Map directly to Native Bootstrap Dark Variables */
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--text);
+  --bs-heading-color: var(--text-h);
+  --bs-card-bg: var(--bg-card);
+  --bs-card-color: var(--text);
+  --bs-border-color: var(--border);
+  --bs-tertiary-bg: var(--code-bg);  /* Forces Bootstrap's .bg-light to become soft matte charcoal */
+}
+
+/* Automatically trigger dark mode based on the user's OS/Browser settings */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
+  :root:not([data-bs-theme="light"]) {
+    --bg: #121212;
+    --code-bg: #1e1e1e;
+    --bg-card: #242424;
+    --text: #c4c7c5;
+    --text-h: #e3e3e3;
+    --border: #2c2c2c;
     --accent: #c084fc;
     --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+    --accent-border: rgba(192, 132, 252, 0.4);
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    --navbar-toggle-invert: 1;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+    --bs-body-bg: var(--bg);
+    --bs-body-color: var(--text);
+    --bs-heading-color: var(--text-h);
+    --bs-card-bg: var(--bg-card);
+    --bs-card-color: var(--text);
+    --bs-border-color: var(--border);
+    --bs-tertiary-bg: var(--code-bg);
   }
 }
+
+/* ==========================================================================
+   3. GLOBAL STRUCTURAL DECORATIONS
+   ========================================================================== */
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Make sure Bootstrap headings inherently adopt Google text-primary colors */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--text-h);
+}
+
+/* Fix text-white-50 opacity issues inside custom navigation containers */
+[data-bs-theme="dark"] .text-white-50 {
+  color: var(--text) !important;
+  opacity: 0.75;
+}
+
+/* Rest of your static rules (body, h1, h2, .hero, etc.) follow here */
 
 body {
   margin: 0;
