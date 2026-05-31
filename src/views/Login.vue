@@ -45,7 +45,7 @@
 
         <!-- Dev / demo shortcut -->
         <div class="mt-4 p-3 rounded border bg-body-tertiary">
-          <small class="text-muted d-block mb-2">Demo admin account (no PHP needed):</small>
+          <small class="text-muted d-block mb-2">Demo Admin account (no PHP needed):</small>
           <button class="btn btn-sm btn-outline-secondary" @click="loginAsAdmin">Login as Admin</button>
         </div>
 
@@ -97,11 +97,11 @@ export default {
     loginAsAdmin() {
       // Seed a demo admin user in localStorage if not present
       const users = JSON.parse(localStorage.getItem('localUsers') || '[]')
-      if (!users.find(u => u.username === 'admin')) {
-        users.push({ id: 1, username: 'admin', email: 'admin@novastore.com', phone: '0400000000', password: 'admin123', is_admin: 1 })
+      if (!users.find(u => u.username === 'Admin')) {
+        users.push({ id: 1, username: 'Admin', email: 'admin@novastore.com', phone: '0400000000', password: 'admin123', is_admin: 1 })
         localStorage.setItem('localUsers', JSON.stringify(users))
       }
-      this.username = 'admin'
+      this.username = 'Admin'
       this.password = 'admin123'
       this.submitForm()
     }

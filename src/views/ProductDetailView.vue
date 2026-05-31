@@ -1,3 +1,4 @@
+<!-- nak here, all my old comments got overwritten by Ali's implementation -->
 <template>
   <div class="container mt-4 product-detail-view">
 
@@ -15,7 +16,7 @@
           >
         </div>
 
-        <div class="col-md-6 d-flex flex-column gap-3">
+        <div class="col-md-6 d-flex flex-column gap-3 align-items-center text-center">
 
           <div>
             <span class="badge bg-secondary mb-2">{{ product.category }}</span>
@@ -24,7 +25,7 @@
           </div>
 
           <!-- Average rating display -->
-          <div class="d-flex align-items-center gap-2">
+          <div class="d-flex align-items-center gap-2 justify-content-center">
             <StarRating :rating="avgRating" readonly />
             <span class="text-muted small">
               {{ avgRating.toFixed(1) }} ({{ reviews.length }} review{{ reviews.length !== 1 ? 's' : '' }})
@@ -34,7 +35,7 @@
           <h3 class="text-primary mb-0">${{ product.price }}</h3>
 
           <!-- Quantity + Add to Cart -->
-          <div class="d-flex align-items-center gap-2 flex-wrap">
+          <div class="d-flex align-items-center gap-2 flex-wrap justify-content-center">
             <div class="input-group" style="width: 130px;">
               <button class="btn btn-outline-secondary" type="button" @click="qty > 1 && qty--">−</button>
               <input type="number" class="form-control text-center qty-input" v-model.number="qty" min="1" max="99">
@@ -206,9 +207,8 @@ export default {
 
 <style scoped>
 /* Hide the browser's native number-input spinner arrows so only the
-   custom −/+ buttons control quantity */
-.qty-input::-webkit-outer-spin-button,
-.qty-input::-webkit-inner-spin-button {
+  custom −/+ buttons control quantity */
+.qty-input::-webkit-outer-spin-button, .qty-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
