@@ -59,7 +59,7 @@
             <router-link class="nav-link text-white-50 p-2" to="/contact">Contact</router-link>
           </li>
 
-          <li v-if="$store.state.user && $store.state.user.is_admin" class="nav-item">
+          <li v-if="$store.state.user && $store.state.user.is_admin == 1" class="nav-item">
             <router-link class="nav-link text-white-50 p-2" to="/admin">Admin</router-link>
           </li>
 

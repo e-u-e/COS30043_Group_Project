@@ -73,7 +73,7 @@ router.beforeEach((to) => {
   if (to.meta.requiresAuth && !user) {
     return { path: '/login', query: { redirect: to.fullPath } }
   }
-  if (to.meta.requiresAdmin && user && !user.is_admin) {
+  if (to.meta.requiresAdmin && user && user.is_admin != 1) {
     return { path: '/' }
   }
 })
