@@ -34,8 +34,8 @@
                       <tr>
                         <th class="text-muted">Role</th>
                         <td>
-                          <span class="badge" :class="$store.state.user.is_admin ? 'bg-danger' : 'bg-secondary'">
-                            {{ $store.state.user.is_admin ? 'Admin' : 'Customer' }}
+                          <span class="badge" :class="$store.state.user.is_admin == 1 ? 'bg-danger' : 'bg-secondary'">
+                            {{ $store.state.user.is_admin == 1 ? 'Admin' : 'Customer' }}
                           </span>
                         </td>
                       </tr>
@@ -52,7 +52,7 @@
                   <h5 class="card-title mb-3">Quick Links</h5>
                   <router-link to="/cart" class="btn btn-outline-primary rounded-pill">View Cart</router-link>
                   <router-link to="/favorites" class="btn btn-outline-secondary rounded-pill">My Favourites</router-link>
-                  <router-link v-if="$store.state.user.is_admin" to="/admin" class="btn btn-outline-danger rounded-pill">Admin Panel</router-link>
+                  <router-link v-if="$store.state.user.is_admin == 1" to="/admin" class="btn btn-outline-danger rounded-pill">Admin Panel</router-link>
                 </div>
               </div>
             </div>
