@@ -1,3 +1,5 @@
+<!-- i worked on the favourites section as part of section 2 because you could argue that cookies and caches are saved locally,
+  hence you can have a ssaved favourites list even when logged in -->
 <template>
   <div class="container mt-5">
     <h1 class="mb-4">Favourites</h1>

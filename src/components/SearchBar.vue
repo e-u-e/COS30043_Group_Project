@@ -23,5 +23,3 @@ watch(local, (v) => {
 	emit('update:modelValue', v)
 })
 </script>
-
-<style scoped></style>

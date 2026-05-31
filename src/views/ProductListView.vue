@@ -164,20 +164,3 @@ export default {
   }
 }
 </script>
-
-<style scoped> .slide-down-enter-active, .slide-down-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  transform-origin: top;
-}
-.slide-down-enter-from, .slide-down-leave-to {
-  opacity: 0;
-  transform: scaleY(0.8) translateY(-10px);
-}
-.product-anim-item {
-  transform: translateY(var(--parallax-reveal-translate, 42px));
-  opacity: var(--parallax-reveal-opacity, 0);
-  transition: transform 0.45s ease-out, opacity 0.45s ease-out;
-  transition-delay: var(--card-stagger, 0ms);
-  will-change: transform, opacity;
-}
-</style>

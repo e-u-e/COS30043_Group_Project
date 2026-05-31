@@ -32,31 +32,3 @@ export default {
 	name: 'HomeBackground'
 }
 </script>
-
-<style scoped> .hero-section {
-  /*give it a noticeable scroll effect*/
-  min-height: 80vh;
-  background-color: #0b0c10;
-}
-
-/*using local image and increased size to avoid clipping*/
-.star-bg {
-  top: 0;
-  left: 0;
-  background-image: url('/fred-moon-star-trails.jpg'); 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transform: translateY(var(--parallax-y, 0px)) rotate(var(--parallax-rotate, 0deg)) scale(var(--parallax-scale, 1.15));
-  transform-origin: center center;
-  opacity: 0.8;
-  will-change: transform;
-}
-
-/*text color contrasting*/
-.hero-content {
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
-  transform: translateY(var(--parallax-y, 0px));
-  will-change: transform;
-}
-</style>

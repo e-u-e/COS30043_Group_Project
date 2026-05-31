@@ -109,15 +109,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.category {
-  color: inherit;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.category:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
-}
-</style>

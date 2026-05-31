@@ -54,6 +54,230 @@ body {
   margin: 0;
 }
 
+.page-wrapper {
+  padding-top: 100px;
+}
+
+.custom-navbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.custom-navbar--home {
+  background: rgba(30, 31, 34, 0.15);
+}
+
+.custom-navbar--page {
+  background: rgba(30, 31, 34, 0.15);
+  box-shadow: 0 18px 38px rgba(10, 12, 20, 0.18);
+}
+
+.custom-navbar--page .navbar-brand, .custom-navbar--page .nav-link, .custom-navbar--page .link-hover, .custom-navbar--page .text-white-50 {
+  color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.custom-navbar--page .navbar-brand {
+  font-weight: 700;
+}
+
+.custom-navbar .link-hover {
+  transition: color 0.15s ease;
+}
+
+.custom-navbar .link-hover:hover, .custom-navbar .nav-link:hover {
+  color: #ffffff !important;
+}
+
+.custom-navbar .nav-link.router-link-active {
+  background: #5865f2;
+  color: #ffffff !important;
+  border-radius: 999px;
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
+  box-shadow: 0 6px 18px rgba(88, 101, 242, 0.18);
+}
+
+.custom-navbar .nav-link:focus-visible {
+  outline: 2px solid rgba(88, 101, 242, 0.28);
+  outline-offset: 3px;
+}
+
+.hero-section {
+  min-height: 80vh;
+  background-color: #0b0c10;
+}
+
+.star-bg {
+  top: 0;
+  left: 0;
+  background-image: url('/fred-moon-star-trails.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateY(var(--parallax-y, 0px)) rotate(var(--parallax-rotate, 0deg)) scale(var(--parallax-scale, 1.15));
+  transform-origin: center center;
+  opacity: 0.8;
+  will-change: transform;
+}
+
+.hero-content {
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+  transform: translateY(var(--parallax-y, 0px));
+  will-change: transform;
+  color: #ffffff;
+}
+
+.hero-section h1, .hero-section h2, .hero-section p {
+  color: #ffffff;
+}
+
+.card {
+  transition: box-shadow 0.25s ease, transform 0.18s ease;
+}
+
+.card:hover {
+  box-shadow:
+    rgba(0, 0, 0, 0.18) 0 18px 28px -8px,
+    rgba(0, 0, 0, 0.12) 0 8px 14px -10px;
+  transform: translateY(-7px);
+}
+
+.favorite-btn-overlay {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 10;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.star-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: drop-shadow(0px 2px 5px rgba(0, 0, 0, 0.35));
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.rotate-star {
+  transform: rotate(72deg) scale(1.15);
+}
+
+.card-img-wrap {
+  overflow: hidden;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: #ffffff;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .card-image {
+  transform: scale(1.03);
+}
+
+.btn-view, .btn-add {
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-view:hover, .btn-add:hover {
+  transform: translateY(-4px);
+}
+
+.category {
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.slide-down-enter-active, .slide-down-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform-origin: top;
+}
+
+.slide-down-enter-from,.slide-down-leave-to {
+  opacity: 0;
+  transform: scaleY(0.8) translateY(-10px);
+}
+
+.product-anim-item {
+  transform: translateY(var(--parallax-reveal-translate, 42px));
+  opacity: var(--parallax-reveal-opacity, 0);
+  transition: transform 0.45s ease-out, opacity 0.45s ease-out;
+  transition-delay: var(--card-stagger, 0ms);
+  will-change: transform, opacity;
+}
+
+/*custom navbar changes because the pill outline doesn't fit well on mobile devices*/
+@media (max-width: 992px) {
+  .custom-navbar {
+    border-radius: 1rem !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 0.9rem 1rem 1rem;
+    border-radius: 1rem;
+    background: rgba(18, 24, 38, 0.95);
+    box-shadow: 0 18px 38px rgba(10, 12, 20, 0.28);
+  }
+
+  .navbar-nav {
+    gap: 0 !important;
+    width: 100%;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.35rem;
+    padding: 0.8rem 1rem !important;
+    border-radius: 0.85rem;
+  }
+
+  .custom-navbar .nav-link.router-link-active {
+    border-radius: 0.85rem;
+  }
+
+  .custom-navbar--page .navbar-brand, .custom-navbar--page .nav-link, .custom-navbar--page .link-hover, .custom-navbar--page .text-white-50 {
+    color: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .custom-navbar .link-hover:hover, .custom-navbar .nav-link:hover {
+    color: #ffffff !important;
+  }
+}
+
 h1, h2 {
   font-family: var(--heading);
   font-weight: 500;
@@ -156,11 +380,8 @@ code {
 }
 
 #app {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
+  width: 100%;
   text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
