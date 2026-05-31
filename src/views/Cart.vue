@@ -6,7 +6,7 @@
     <!-- Empty state -->
     <div v-if="cart.length === 0" class="text-center py-5">
       <div class="mb-3" style="font-size: 4rem;">🛒</div>
-      <h4 class="text-muted mb-3">Your cart is empty</h4>
+      <h4 class="text-muted mb-3">Your cart is empty.</h4>
       <router-link to="/products" class="btn btn-primary rounded-pill px-5">
         Browse Products
       </router-link>
