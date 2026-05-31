@@ -4,7 +4,6 @@
       <div class="col-12 col-lg-8">
         <div class="text-center mb-4">
           <h1 class="mb-4">Contact Us</h1>
-          <p class="text-white-50 mb-0">Use these slots to keep all of our contact links in one place.</p>
         </div>
 
         <div class="row g-3">
