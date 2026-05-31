@@ -6,7 +6,7 @@
     <!-- Empty state -->
     <div v-if="cart.length === 0" class="text-center py-5">
       <div class="mb-3" style="font-size: 4rem;">🛒</div>
-      <h4 class="text-muted mb-3">Your cart is empty.</h4>
+      <h4 class="text-muted mb-3">Your cart is empty</h4>
       <router-link to="/products" class="btn btn-primary rounded-pill px-5">
         Browse Products
       </router-link>
@@ -130,7 +130,64 @@
 </template>
 
 <script>
+import { store } from '../store/index.js'
+
 export default {
-  name: 'CartView'
+  name: 'CartView',
+
+  computed: {
+    cart() { return store.state.cart },
+    totalItems() { return store.cartCount() },
+    subtotal() { return store.cartTotal() },
+    total() {
+      const shipping = this.subtotal >= 100 ? 0 : 9.99
+      return this.subtotal + shipping
+    }
+  },
+
+  methods: {
+    increaseQty(item) {
+      store.updateCartQuantity(item.id, item.quantity + 1)
+    },
+    decreaseQty(item) {
+      store.updateCartQuantity(item.id, item.quantity - 1)
+    },
+    updateQty(item, value) {
+      const qty = parseInt(value)
+      if (!isNaN(qty)) store.updateCartQuantity(item.id, qty)
+    },
+    removeItem(item) {
+      store.removeFromCart(item.id)
+    },
+    clearCart() {
+      store.clearCart()
+    }
+  }
 }
 </script>
+
+<style scoped>
+/* Hide native number-input spinner arrows; the −/+ buttons control quantity */
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.qty-input {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.cart-item-enter-active,
+.cart-item-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.cart-item-enter-from,
+.cart-item-leave-to {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.cart-item-move {
+  transition: transform 0.3s ease;
+}
+</style>
