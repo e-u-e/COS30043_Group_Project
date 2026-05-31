@@ -1,3 +1,4 @@
+//nak's advanced custom parallaxing
 const DEFAULT_SPEED = 0.5
 const DEFAULT_ROTATE_SPEED = 0
 const DEFAULT_SCALE_SPEED = 0
@@ -11,6 +12,7 @@ function clamp(value, min, max) {
   return Math.min(max, Math.max(min, value))
 }
 
+//gets the base scroll speed from a number object
 function getSpeed(binding) {
   if (typeof binding.value === 'number') {
     return binding.value
@@ -23,6 +25,7 @@ function getSpeed(binding) {
   return DEFAULT_SPEED
 }
 
+//alias support to prevent breaking in the case of a variable not being found
 function getRotateSpeed(binding) {
   if (!binding.value || typeof binding.value === 'number') {
     return DEFAULT_ROTATE_SPEED
@@ -43,6 +46,7 @@ function getRotateSpeed(binding) {
   return DEFAULT_ROTATE_SPEED
 }
 
+//optional scaling inless requested
 function getScaleSpeed(binding) {
   if (!binding.value || typeof binding.value === 'number') {
     return DEFAULT_SCALE_SPEED
@@ -59,6 +63,7 @@ function getScaleSpeed(binding) {
   return DEFAULT_SCALE_SPEED
 }
 
+//scale base number just in case an item gets clipped because it is too small
 function getScaleBase(binding) {
   if (!binding.value || typeof binding.value === 'number') {
     return DEFAULT_SCALE_BASE
@@ -75,6 +80,7 @@ function getScaleBase(binding) {
   return DEFAULT_SCALE_BASE
 }
 
+//translation function based on the cards sliding up in products
 function getRevealTranslate(binding) {
   if (!binding.value || typeof binding.value === 'number') {
     return DEFAULT_REVEAL_TRANSLATE
@@ -95,6 +101,7 @@ function getRevealTranslate(binding) {
   return DEFAULT_REVEAL_TRANSLATE
 }
 
+//items are revealed at a lower opacity to get out of the reader's view
 function getRevealOpacity(binding) {
   if (!binding.value || typeof binding.value === 'number') {
     return DEFAULT_REVEAL_OPACITY
@@ -111,6 +118,7 @@ function getRevealOpacity(binding) {
   return DEFAULT_REVEAL_OPACITY
 }
 
+//define a certain section of the viewport when the animation actually starts
 function getRevealStart(binding) {
   if (!binding.value || typeof binding.value === 'number') {
     return DEFAULT_REVEAL_START
@@ -127,6 +135,7 @@ function getRevealStart(binding) {
   return DEFAULT_REVEAL_START
 }
 
+//same as above, but for ending
 function getRevealEnd(binding) {
   if (!binding.value || typeof binding.value === 'number') {
     return DEFAULT_REVEAL_END
@@ -143,6 +152,7 @@ function getRevealEnd(binding) {
   return DEFAULT_REVEAL_END
 }
 
+//update custom css properties
 function applyParallax(el) {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0
   const offset = scrollTop * (el._parallaxSpeed ?? DEFAULT_SPEED)
@@ -170,6 +180,7 @@ function applyParallax(el) {
 
 export const parallaxDirective = {
   mounted(el, binding) {
+    //parsed options are cached when loaded for performance
     el._parallaxSpeed = getSpeed(binding)
     el._parallaxRotateSpeed = getRotateSpeed(binding)
     el._parallaxScaleSpeed = getScaleSpeed(binding)
@@ -179,9 +190,11 @@ export const parallaxDirective = {
     el._parallaxRevealStart = getRevealStart(binding)
     el._parallaxRevealEnd = getRevealEnd(binding)
 
+    //here are the custom properties that can be used
     el.style.setProperty('--parallax-reveal-translate', `${el._parallaxRevealTranslate}px`)
     el.style.setProperty('--parallax-reveal-opacity', String(el._parallaxRevealOpacity))
 
+    //triggles scroll based animations
     const onScroll = () => {
       if (el._parallaxRafId) {
         return
@@ -198,6 +211,7 @@ export const parallaxDirective = {
     window.addEventListener('scroll', onScroll, { passive: true })
     window.addEventListener('resize', onScroll, { passive: true })
 
+    //run on mount so it stays in place
     el._parallaxInitRafId = requestAnimationFrame(() => {
       applyParallax(el)
       el._parallaxInitRafId = null
@@ -205,6 +219,7 @@ export const parallaxDirective = {
   },
 
   updated(el, binding) {
+    //only recompute if any of the base items get changed
     const nextSpeed = getSpeed(binding)
     const nextRotateSpeed = getRotateSpeed(binding)
     const nextScaleSpeed = getScaleSpeed(binding)
@@ -213,16 +228,10 @@ export const parallaxDirective = {
     const nextRevealOpacity = getRevealOpacity(binding)
     const nextRevealStart = getRevealStart(binding)
     const nextRevealEnd = getRevealEnd(binding)
-    if (
-      nextSpeed !== el._parallaxSpeed
-      || nextRotateSpeed !== el._parallaxRotateSpeed
-      || nextScaleSpeed !== el._parallaxScaleSpeed
-      || nextScaleBase !== el._parallaxScaleBase
-      || nextRevealTranslate !== el._parallaxRevealTranslate
-      || nextRevealOpacity !== el._parallaxRevealOpacity
-      || nextRevealStart !== el._parallaxRevealStart
-      || nextRevealEnd !== el._parallaxRevealEnd
-    ) {
+    if (nextSpeed !== el._parallaxSpeed || nextRotateSpeed !== el._parallaxRotateSpeed ||
+        nextScaleSpeed !== el._parallaxScaleSpeed || nextScaleBase !== el._parallaxScaleBase ||
+        nextRevealTranslate !== el._parallaxRevealTranslate || nextRevealOpacity !== el._parallaxRevealOpacity ||
+        nextRevealStart !== el._parallaxRevealStart || nextRevealEnd !== el._parallaxRevealEnd) {
       el._parallaxSpeed = nextSpeed
       el._parallaxRotateSpeed = nextRotateSpeed
       el._parallaxScaleSpeed = nextScaleSpeed
@@ -236,6 +245,7 @@ export const parallaxDirective = {
   },
 
   unmounted(el) {
+    //removed listeners and frames to prevent memory leaks
     window.removeEventListener('scroll', el._parallaxHandler)
     window.removeEventListener('resize', el._parallaxHandler)
 

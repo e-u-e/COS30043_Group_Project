@@ -1,14 +1,12 @@
-/* ==========================================================================
-   1. LIGHT MODE SETUP (Google Minimal Clean)
-   ========================================================================== */
+/*LIGHT MODE SETUP*/
 :root, [data-bs-theme="light"] {
-  /* Your Custom Variables */
-  --bg: #ffffff;             /* Pure white canvas */
-  --code-bg: #f8f9fa;        /* Soft gray sections (Google's gray-100) */
-  --bg-card: #ffffff;        /* Cards match background */
-  --text: #4a4a4a;           /* Soft dark text */
-  --text-h: #1f1f1f;         /* Distinct header text */
-  --border: #e0e0e0;         /* Minimal lines */
+  /*Custom Variables*/
+  --bg: #ffffff;          
+  --code-bg: #f8f9fa;      
+  --bg-card: #ffffff;       
+  --text: #4a4a4a;        
+  --text-h: #1f1f1f;       
+  --border: #e0e0e0;        
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
@@ -27,18 +25,15 @@
   --bs-tertiary-bg: var(--code-bg); /* This maps automatically to Bootstrap's .bg-light */
 }
 
-/* ==========================================================================
-   2. THE GOOGLE / FACEBOOK DARK MODE PALETTE
-   ========================================================================== */
-
+/*DARK MODE PALETTE*/
 /* Mixin helper to apply theme values smoothly across selectors */
 [data-bs-theme="dark"] {
-  --bg: #121212;             /* Google Dark Base Material */
-  --code-bg: #1e1e1e;        /* Facebook/Google secondary section layer */
-  --bg-card: #242424;        /* Google Card elevation level 1 */
-  --text: #c4c7c5;           /* Google text-secondary (Soft on eye sockets) */
-  --text-h: #e3e3e3;         /* Google bright text-primary headers */
-  --border: #2c2c2c;         /* Subdued edge borders */
+  --bg: #121212;            
+  --code-bg: #1e1e1e;       
+  --bg-card: #242424;     
+  --text: #c4c7c5;         
+  --text-h: #e3e3e3;      
+  --border: #2c2c2c;      
   --accent: #c084fc;
   --accent-bg: rgba(192, 132, 252, 0.15);
   --accent-border: rgba(192, 132, 252, 0.4);
@@ -80,9 +75,7 @@
   }
 }
 
-/* ==========================================================================
-   3. GLOBAL STRUCTURAL DECORATIONS
-   ========================================================================== */
+/*GLOBAL STRUCTURAL DECORATIONS*/
 body {
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
@@ -100,8 +93,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   opacity: 0.75;
 }
 
-/* Rest of your static rules (body, h1, h2, .hero, etc.) follow here */
-
 body {
   margin: 0;
 }
@@ -110,6 +101,7 @@ body {
   padding-top: 100px;
 }
 
+/*nak (I) worked on the custom navs and buttons up till the mobile navbar*/
 .custom-navbar {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -141,6 +133,7 @@ body {
   color: #ffffff !important;
 }
 
+/*!important overrides the bootstrap actively and updates hovered/selected text to reflect this css block*/
 .custom-navbar .nav-link.router-link-active {
   background: #5865f2;
   color: #ffffff !important;
@@ -160,6 +153,7 @@ body {
   background-color: #0b0c10;
 }
 
+/*parallaxing for the home page*/
 .star-bg {
   top: 0;
   left: 0;
@@ -184,6 +178,7 @@ body {
   color: #ffffff;
 }
 
+/*this and the hover below is just animations for the product cards*/
 .card {
   transition: box-shadow 0.25s ease, transform 0.18s ease;
 }
@@ -195,6 +190,7 @@ body {
   transform: translateY(-7px);
 }
 
+/*formatting for the favourites star anchor*/
 .favorite-btn-overlay {
   position: absolute;
   top: 12px;
@@ -238,6 +234,7 @@ body {
   transition: transform 0.6s ease;
 }
 
+/*scales the image within the card when hoevered*/
 .card:hover .card-image {
   transform: scale(1.03);
 }
@@ -248,8 +245,10 @@ body {
 
 .btn-view:hover, .btn-add:hover {
   transform: translateY(-4px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
+/*css for the home page's category buttons*/
 .category {
   color: inherit;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -260,16 +259,19 @@ body {
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
 }
 
+/*when loading, the cards slide up*/
 .slide-down-enter-active, .slide-down-leave-active {
   transition: opacity 0.2s ease, transform 0.2s ease;
   transform-origin: top;
 }
 
+/*when offloading, the cards slide downwards*/
 .slide-down-enter-from,.slide-down-leave-to {
   opacity: 0;
   transform: scaleY(0.8) translateY(-10px);
 }
 
+/*item cards reveal themselves in order*/
 .product-anim-item {
   transform: translateY(var(--parallax-reveal-translate, 42px));
   opacity: var(--parallax-reveal-opacity, 0);

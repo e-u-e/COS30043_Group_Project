@@ -93,7 +93,6 @@ export default {
   name: 'NavbarComponent',
   data() {
     return {
-      // Holds the reactive state for the current active theme look
       isDarkMode: false
     }
   },
@@ -103,18 +102,15 @@ export default {
     }
   },
   mounted() {
-    // 1. Check if the user has manually saved a preference previously
-    const savedTheme = localStorage.getItem('theme');
-    
-    // 2. If a preference exists, use it. Otherwise, match their browser/OS preference
+    const savedTheme = localStorage.getItem('theme')
+
     if (savedTheme) {
-      this.isDarkMode = savedTheme === 'dark';
+      this.isDarkMode = savedTheme === 'dark'
     } else {
-      this.isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      this.isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
     }
-    
-    // 3. Immediately set up the correct data attribute on page mounting tree
-    this.applyTheme();
+
+    this.applyTheme()
   },
   methods: {
     logout() {
@@ -122,197 +118,14 @@ export default {
       this.$router.push('/')
     },
     toggleTheme() {
-      // Flips the layout variant boolean switch
-      this.isDarkMode = !this.isDarkMode;
-      
-      // Save the state choice so it persists across views and pages
-      localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
-      
-      // Trigger the engine layout repaint execution attribute
-      this.applyTheme();
+      this.isDarkMode = !this.isDarkMode
+      localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light')
+      this.applyTheme()
     },
     applyTheme() {
-      const themeValue = this.isDarkMode ? 'dark' : 'light';
-      // Dynamically toggles Bootstrap's data-bs-theme property on the root html node element
-      document.documentElement.setAttribute('data-bs-theme', themeValue);
+      const themeValue = this.isDarkMode ? 'dark' : 'light'
+      document.documentElement.setAttribute('data-bs-theme', themeValue)
     }
   }
 }
 </script>
-
-<style scoped>
-/* ==========================================================================
-   1. BASE GLASS NAV CONFIGURATION (Shared across modes)
-   ========================================================================== */
-.custom-navbar {
-  /* Liquid glass effect base configuration */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--bs-border-color);
-  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.link-hover {
-  transition: color 0.15s ease;
-}
-
-/* ==========================================================================
-   2. LIGHT MODE UTILITIES (Standard Look)
-   ========================================================================== */
-.custom-navbar--home {
-  background: rgba(30, 31, 34, 0.15);
-}
-
-.custom-navbar--page {
-  background: rgba(255, 255, 255, 0.65); /* Soft glass gray-white tint */
-  box-shadow: 0 18px 38px rgba(10, 12, 20, 0.08);
-}
-
-/* Home Layout Text Color rules (Default text properties) */
-.custom-navbar--home .navbar-brand { color: #ffffff !important; }
-.custom-navbar--home .nav-link, 
-.custom-navbar--home .link-hover { color: rgba(255, 255, 255, 0.7) !important; }
-
-/* Non-Home Layout Text Colors (Flips cleanly to black text on white pages) */
-.custom-navbar--page .navbar-brand {
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.85) !important;
-}
-.custom-navbar--page .nav-link,
-.custom-navbar--page .link-hover {
-  color: rgba(0, 0, 0, 0.6) !important;
-}
-
-/* Hover dynamics for light variants */
-.custom-navbar--home .nav-link:hover,
-.custom-navbar--home .link-hover:hover { color: #ffffff !important; }
-
-.custom-navbar--page .nav-link:hover,
-.custom-navbar--page .link-hover:hover { color: #000000 !important; }
-
-
-/* ==========================================================================
-   3. NATIVE BOOTSTRAP DARK MODE OVERRIDES (Google/WhatsApp Feel)
-   ========================================================================== */
-[data-bs-theme="dark"] .custom-navbar--home {
-  background: rgba(18, 18, 18, 0.4); /* Translucent dark tint */
-}
-
-[data-bs-theme="dark"] .custom-navbar--page {
-  background: rgba(36, 36, 36, 0.7); /* WhatsApp/Google translucent card layer */
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.4);
-}
-
-/* Force dark-mode text to inherit your crisp, soft-eye off-whites globally */
-[data-bs-theme="dark"] .navbar-brand {
-  color: var(--text-h) !important;
-}
-[data-bs-theme="dark"] .nav-link,
-[data-bs-theme="dark"] .link-hover {
-  color: var(--text) !important;
-}
-[data-bs-theme="dark"] .nav-link:hover,
-[data-bs-theme="dark"] .link-hover:hover {
-  color: var(--text-h) !important;
-}
-
-/* ==========================================================================
-   4. ACTIVE ROUTE LINKS (Discord / Premium Accent Pill style)
-   ========================================================================== */
-.custom-navbar .nav-link.router-link-active {
-  background: #5865F2; /* Custom accent blue branding */
-  color: #ffffff !important;
-  border-radius: 999px;
-  padding-left: 0.8rem !important;
-  padding-right: 0.8rem !important;
-  box-shadow: 0 6px 18px rgba(88, 101, 242, 0.25);
-}
-
-.custom-navbar .nav-link:focus-visible {
-  outline: 2px solid rgba(88, 101, 242, 0.4);
-  outline-offset: 3px;
-}
-
-/* ==========================================================================
-   5. MOBILE LAYER COMPLIANCE
-   ========================================================================== */
-@media (max-width: 992px) {
-  .custom-navbar {
-    border-radius: 1rem !important;
-    align-items: flex-start !important;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .navbar-toggler {
-    margin-left: auto;
-  }
-
-  .navbar-collapse {
-    width: 100%;
-    margin-top: 0.75rem;
-    padding: 0.9rem 1rem 1rem;
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.98); /* Matte white drop-down for light mode */
-    border: 1px solid var(--bs-border-color);
-    box-shadow: 0 18px 38px rgba(10, 12, 20, 0.15);
-  }
-
-  /* WhatsApp/Google Mobile Drawer Dark Setup */
-  [data-bs-theme="dark"] .navbar-collapse {
-    background: rgba(30, 30, 30, 0.98) !important;
-    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.5);
-  }
-
-  .navbar-nav {
-    gap: 0 !important;
-    width: 100%;
-  }
-
-  .navbar-nav .nav-item {
-    width: 100%;
-  }
-
-  .navbar-nav .nav-link {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.35rem;
-    padding: 0.8rem 1rem !important;
-    border-radius: 0.85rem;
-  }
-
-  .custom-navbar .nav-link.router-link-active {
-    border-radius: 0.85rem;
-  }
-  
-  /* Reset responsive overrides to enforce theme compatibility */
-  .custom-navbar--page .navbar-brand, 
-  .custom-navbar--page .nav-link, 
-  .custom-navbar--page .link-hover {
-    color: inherit;
-  }
-}
-
-/* Custom Theme Switcher Styling */
-.theme-toggle-btn {
-  background: transparent;
-  border: 1px solid transparent;
-  color: var(--text);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.theme-toggle-btn:hover {
-  background-color: var(--accent-bg);
-  color: var(--accent) !important;
-  border-color: var(--accent-border);
-}
-
-/* Ensure the color fits perfectly regardless of home view logic context rules */
-.custom-navbar--home .theme-toggle-btn {
-  color: rgba(255, 255, 255, 0.75);
-}
-.custom-navbar--home .theme-toggle-btn:hover {
-  color: #ffffff !important;
-}
-</style>
