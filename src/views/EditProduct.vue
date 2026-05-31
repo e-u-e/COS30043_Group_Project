@@ -5,7 +5,7 @@
 
         <div class="d-flex align-items-center gap-3 mb-4">
           <router-link to="/admin" class="btn btn-sm btn-outline-secondary rounded-pill">
-            ← Back to Admin
+            Back to Admin
           </router-link>
           <h2 class="mb-0">Edit Product</h2>
         </div>
